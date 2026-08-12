@@ -1,0 +1,14 @@
+Put your built release APK here, named exactly:
+
+    globetrotter.apk
+
+The download button on the homepage points to ./downloads/globetrotter.apk —
+as soon as a file with that name exists in this folder, the button works.
+
+To build it from the Flutter project:
+    flutter build apk --release
+    # output lands at build/app/outputs/flutter-apk/app-release.apk
+    cp build/app/outputs/flutter-apk/app-release.apk downloads/globetrotter.apk
+
+Remember to delete this file (or leave it — it won't be served by name)
+once the real APK is in place.

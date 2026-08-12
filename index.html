@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlobeTrotter — Your Seven Hills travel assistant</title>
+<meta name="description" content="Download GlobeTrotter for Android, or open the web app — plan Yaoundé trips across its seven hills.">
+<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 32 32" fill="none">
+        <path d="M2 24 L9 14 L14 20 L19 10 L26 20 L30 24 Z" fill="url(#g1)"/>
+        <defs>
+          <linearGradient id="g1" x1="2" y1="10" x2="30" y2="24" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E8A93A"/>
+            <stop offset="1" stop-color="#F2814B"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      GlobeTrotter
+    </div>
+    <a class="nav-cta" href="#downloads">Get GlobeTrotter</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Yaoundé · city of seven hills</span>
+    <h1>Your city, <em>seven hills</em><br>at a time.</h1>
+    <p class="subhead">
+      Search real Yaoundé destinations, get recommendations built for you,
+      and follow the road from wherever you are to wherever you're headed —
+      on your phone or straight from your browser.
+    </p>
+
+    <svg class="hills" viewBox="0 0 920 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle class="sun" cx="460" cy="70" r="46" fill="url(#sunGrad)"/>
+      <defs>
+        <radialGradient id="sunGrad" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stop-color="#F2814B" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#F2814B" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+          <stop stop-color="#2D6A4F"/>
+          <stop offset="1" stop-color="#1B4332"/>
+        </linearGradient>
+        <linearGradient id="hillNear" x1="0" y1="0" x2="0" y2="1">
+          <stop stop-color="#1B4332"/>
+          <stop offset="1" stop-color="#0E1B16"/>
+        </linearGradient>
+      </defs>
+      <!-- seven overlapping hill silhouettes -->
+      <path d="M0 190 Q70 120 140 190 T280 190 T420 190 T560 190 T700 190 T840 190 T920 190 V220 H0 Z" fill="url(#hillFar)" opacity="0.55"/>
+      <path d="M0 205 Q90 140 180 205 T400 205 T620 205 T840 205 T920 205 V220 H0 Z" fill="url(#hillNear)"/>
+    </svg>
+  </div>
+</section>
+
+<section class="downloads" id="downloads">
+  <div class="card" id="mobileCard">
+    <span class="badge-recommended" id="mobileBadge">Recommended for you</span>
+    <div class="icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#E8A93A" stroke-width="1.8">
+        <rect x="6" y="2" width="12" height="20" rx="2.5"/>
+        <line x1="10" y1="19" x2="14" y2="19"/>
+      </svg>
+    </div>
+    <h3>Mobile app</h3>
+    <p>The full GlobeTrotter experience — offline-friendly, with live location, routing, and push-ready trip reminders. Android now, iOS on the way.</p>
+    <a class="btn btn-primary" href="./downloads/globetrotter.apk" download>
+      Download for Android
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v13m0 0l-5-5m5 5l5-5M5 21h14"/></svg>
+    </a>
+    <div class="meta-row">
+      <span>v1.0 · APK · ~28 MB</span>
+      <span>Android 8.0+</span>
+    </div>
+  </div>
+
+  <div class="card" id="webCard">
+    <span class="badge-recommended" id="webBadge">Recommended for you</span>
+    <div class="icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#F2814B" stroke-width="1.8">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M3 12h18M12 3c2.5 2.6 3.8 5.8 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.8-3.8-9s1.3-6.4 3.8-9Z"/>
+      </svg>
+    </div>
+    <h3>Web app</h3>
+    <p>No install needed. Open GlobeTrotter in any browser, sign in, and pick up your trips on the same account as the app.</p>
+    <a class="btn btn-primary" href="./app/index.html" id="openWebAppBtn">
+      Open web app
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+    </a>
+    <div class="meta-row">
+      <span id="webLinkText">Runs from this site — no separate domain needed</span>
+      <button class="link-btn" id="copyLinkBtn">copy link</button>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">Built for Yaoundé</span>
+      <h2>Same account, same trips, wherever you open it.</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature reveal">
+        <div class="num">Recommendations</div>
+        <h4>Made for what you like</h4>
+        <p>Destinations ranked around your interests and where you've already planned to go.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="num">Routing</div>
+        <h4>Real roads, real distances</h4>
+        <p>See the actual path from where you are to any destination, drawn on OpenStreetMap.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="num">Itineraries</div>
+        <h4>Plan, share, revisit</h4>
+        <p>Put together a multi-day trip and share it with a link — no account required to view.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="num">Reviews</div>
+        <h4>Notes from other travelers</h4>
+        <p>Ratings and comments on every place, written by people who've actually been.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="num">Weather</div>
+        <h4>Know before you go</h4>
+        <p>Current conditions for a destination's neighborhood, right on its detail page.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="num">Assistant</div>
+        <h4>Ask, don't just search</h4>
+        <p>Chat with a built-in guide for suggestions, directions, or quick local context.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    GlobeTrotter — a Seven Hills project for Yaoundé.
+    <br>
+    Having trouble installing? <a href="mailto:support@fahglobe.duckdns.org">support@fahglobe.duckdns.org</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Link copied</div>
+
+<script src="./js/main.js"></script>
+</body>
+</html>

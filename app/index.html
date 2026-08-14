@@ -1,46 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GlobeTrotter</title>
-<meta name="description" content="Plan your Yaoundé trips — search destinations, get recommendations, and build itineraries.">
-<link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="./css/styles.css">
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/app/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="globe">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>globe</title>
+  <link rel="manifest" href="manifest.json">
+
+  <!--
+    MapLibre GL JS — required by the maplibre_gl plugin on web. Must be
+    loaded here, before flutter_bootstrap.js, or every MapLibreMap widget
+    fails at runtime with "Cannot read properties of undefined (reading
+    'LngLat')" — the plugin's Dart code calls straight into the global
+    `maplibregl` JS object, which doesn't exist until this script runs.
+
+    Vendored locally (vendor/maplibre-gl/) instead of loaded from a CDN:
+    pulling this from unpkg.com at runtime means the map silently breaks
+    with the exact "reading 'LngLat'" error whenever that CDN is slow,
+    blocked, or unreachable. Serving it from this same directory removes
+    that failure point entirely — copy the vendor/ folder alongside this
+    index.html on your server (same location as main.dart.js, assets/, etc).
+    Version pinned to 5.24.0 (matches maplibre_gl_web ^5.24.0).
+  -->
+  <script src="vendor/maplibre-gl/maplibre-gl.js"></script>
+  <link href="vendor/maplibre-gl/maplibre-gl.css" rel="stylesheet"/>
 </head>
 <body>
-<!-- Live GlobeTrotter API Gateway on Contabo VPS. -->
-<script>window.GLOBETROTTER_API_BASE_URL = 'http://38.242.246.126:5004';</script>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
 
-<header class="topbar">
-  <div class="wrap topbar-inner">
-    <a class="brand" href="#/explore">
-      <svg class="mark" viewBox="0 0 32 32" fill="none">
-        <path d="M2 24 L9 14 L14 20 L19 10 L26 20 L30 24 Z" fill="url(#g1)"/>
-        <defs>
-          <linearGradient id="g1" x1="2" y1="10" x2="30" y2="24" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#E8A93A"/><stop offset="1" stop-color="#F2814B"/>
-          </linearGradient>
-        </defs>
-      </svg>
-      GlobeTrotter
-    </a>
-    <nav class="tabs" id="tabs"></nav>
-  </div>
-</header>
-
-<main id="app" class="wrap app-container"></main>
-
-<nav class="bottom-nav" id="bottomNav"></nav>
-
-<div class="toast" id="toast"></div>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="./js/api.js"></script>
-<script src="./js/app.js"></script>
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
